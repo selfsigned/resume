@@ -6,7 +6,7 @@
 	export let tags: Array<string> | undefined = undefined;
 </script>
 
-<div class="mb-4">
+<div class="mb-2">
 	<!-- headline -->
 	<div class="flex w-full justify-between text-lg">
 		<h3 class="font-medium">
@@ -39,6 +39,3 @@
 		{/if}
 	</div>
 </div>
-<!-- <br />
-	<span class="font-vcr">»</span>
-	With the STAR method. -->

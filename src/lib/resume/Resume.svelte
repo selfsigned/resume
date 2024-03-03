@@ -109,7 +109,7 @@
 	<div class="my-2 ml-2 flex w-full flex-col gap-2">
 		<!-- Title -->
 		<div class="card glass w-full items-center bg-base-300 p-2 shadow-md">
-			<h1 class="font-bitmap text-2xl font-bold tracking-wide">{name}</h1>
+			<h1 class="font-bitmap text-5xl font-bold tracking-wide">{name}</h1>
 			<div class="divider m-2 mx-[38%] h-1" />
 			<h2 class="text-lg">{title}</h2>
 		</div>

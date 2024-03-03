@@ -1,0 +1,55 @@
+name: Build and release resume
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+env:
+  APP_PORT: 7777
+
+jobs:
+  build_site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run svelte app
+        run: |
+          npm run dev -- --port ${{ env.APP_PORT }} &
+
+      - name: Run pdf generation script
+        run: node generatepdf.js http://localhost:${{ env .APP_PORT }} resume.pdf resume.jpg
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            resume.pdf
+            resume.jpg
+      
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        if: github.ref == 'refs/heads/master'
+        with:
+          tag_name: latest
+          files: |
+            resume.pdf
+            resume.jpg
