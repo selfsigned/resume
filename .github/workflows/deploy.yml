@@ -15,7 +15,7 @@ env:
   APP_PORT: 7777
 
 jobs:
-  build_site:
+  build_pdf:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,12 +51,14 @@ jobs:
             resume.pdf
             resume.jpg
 
+      - name: Run latest-tag
+        uses: EndBug/latest-tag@latest
+
       - name: Create release
         uses: softprops/action-gh-release@v1
         if: github.ref == 'refs/heads/master'
         with:
           tag_name: latest
-          target_commitish: ${{ github.sha }} 
           files: |
             resume.pdf
             resume.jpg
