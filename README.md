@@ -6,5 +6,6 @@ My resume written in Svelte + TailwindCSS.
 
 - [x] Resume
 - [x] Puppeteer export to pdf script
-- [ ] Github action
+- [x] Github action
 - [ ] GhostScript compression
+- [ ] Fix shadow bug or remove them

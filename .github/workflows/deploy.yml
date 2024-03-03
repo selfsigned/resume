@@ -34,8 +34,15 @@ jobs:
         run: |
           npm run dev -- --port ${{ env.APP_PORT }} &
 
-      - name: Run pdf generation script
-        run: node generatepdf.js http://localhost:${{ env .APP_PORT }} resume.pdf resume.jpg
+      - name: Run PDF generation script
+        run: node generatepdf.js http://localhost:${{ env.APP_PORT }} resume_raw.pdf resume.jpg
+
+      - name: Compress PDF
+        uses: jy95/ghostscript-action@v1
+        with:
+          file: 'resume_raw.pdf'
+          output: 'resume.pdf'
+          arbitrary-parameters: '-dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer'
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
@@ -43,7 +50,6 @@ jobs:
           path: |
             resume.pdf
             resume.jpg
-      
 
       - name: Create release
         uses: softprops/action-gh-release@v1
