@@ -23,11 +23,17 @@
 	export let phone: string | undefined = undefined;
 	export let linkedin: string | undefined = 'selfsigned';
 	export let github: string | undefined = 'selfsigned';
+
+	// Impl details
+	export let forPrint: boolean = false;
 </script>
 
-<div class="flex h-[29.7cm] w-[21cm] flex-row-reverse">
+<div
+	class="flex h-[29.7cm] w-[21cm] flex-row-reverse {forPrint ? 'remove-shadows' : ''}"
+	{...$$restProps}
+>
 	<!-- Sidebar -->
-	<div class="bg-card-bordered card m-2 flex w-5/12 items-center shadow-xl">
+	<div class="card card-bordered mx-2 mb-1 mt-2 flex w-5/12 items-center shadow-xl">
 		<!-- Avatar -->
 		<div class="avatar mb-6 mt-2">
 			<div class="w-[6rem] rounded-3xl border border-base-300 shadow-xl">
@@ -108,7 +114,7 @@
 	<!-- Body -->
 	<div class="my-2 ml-2 flex w-full flex-col gap-2">
 		<!-- Title -->
-		<div class="card glass w-full items-center bg-base-300 p-2 shadow-md">
+		<div class="card w-full items-center bg-base-300 p-2 shadow-md {forPrint ? '' : 'glass'}">
 			<h1 class="font-bitmap text-5xl font-bold tracking-wide">{name}</h1>
 			<div class="divider m-2 mx-[38%] h-1" />
 			<h2 class="text-lg">{title}</h2>

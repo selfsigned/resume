@@ -45,3 +45,14 @@
 		@apply mr-[2.5%] sm:mr-[5%];
 	}
 }
+
+/* Ugly and slow hack */
+.remove-shadows > * {
+	box-shadow: none !important;
+}
+.remove-shadows > * > * {
+	box-shadow: none !important;
+}
+.remove-shadows > * > * > * {
+	box-shadow: none !important;
+}
