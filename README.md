@@ -8,4 +8,4 @@ My resume written in Svelte + TailwindCSS.
 - [x] Puppeteer export to pdf script
 - [x] Github action
 - [x] GhostScript compression
-- [ ] Fix shadow bug or remove them
+- [x] Fix shadow bug or remove them
