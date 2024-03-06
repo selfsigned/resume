@@ -29,7 +29,7 @@
 </script>
 
 <div
-	class="flex h-[29.7cm] w-[21cm] flex-row-reverse {forPrint ? 'remove-shadows' : ''}"
+	class="flex h-[29.7cm] w-[21cm] flex-row-reverse font-normal {forPrint ? 'remove-shadows' : ''}"
 	{...$$restProps}
 >
 	<!-- Sidebar -->
@@ -115,7 +115,7 @@
 	<div class="my-2 ml-2 flex w-full flex-col gap-2">
 		<!-- Title -->
 		<div class="card w-full items-center bg-base-300 p-2 shadow-md {forPrint ? '' : 'glass'}">
-			<h1 class="font-bitmap text-5xl font-bold tracking-wide">{name}</h1>
+			<h1 class="font-vcr text-5xl font-bold tracking-tight">{name}</h1>
 			<div class="divider m-2 mx-[38%] h-1" />
 			<h2 class="text-lg">{title}</h2>
 		</div>
