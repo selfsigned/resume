@@ -29,6 +29,12 @@
 			url('/fonts/SpaceMono-Regular.woff2');
 		font-weight: normal;
 	}
+
+	@font-face {
+		font-family: 'Comic Sans MS';
+		src: local('Comic Sans MS'), local('Comic Sans'), url('/fonts/comic.woff2');
+		font-weight: normal;
+	}
 }
 
 @layer components {
