@@ -42,12 +42,12 @@ jobs:
 
       - name: Run PDF generation script
         run: |
-          node generateResume.js "http://localhost:${{ env.APP_PORT }}/?print=1&theme=light" resume.pdf
-          node generateResume.js "http://localhost:${{ env.APP_PORT }}/?print=1&theme=business" resume_dark.pdf
-          node generateResume.js "http://localhost:${{ env.APP_PORT }}/?print=1&theme=wireframe" resume_comic.pdf
-          node generateResume.js "http://localhost:${{ env.APP_PORT }}/?theme=light" resume.jpg resume.png
-          node generateResume.js "http://localhost:${{ env.APP_PORT }}/?theme=business" resume_dark.jpg resume_dark.png
-          node generateResume.js "http://localhost:${{ env.APP_PORT }}/?theme=wireframe" resume_comic.jpg resume_comic.png
+          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?print=1&theme=light" resume.pdf
+          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?print=1&theme=business" resume_dark.pdf
+          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?print=1&theme=wireframe" resume_comic.pdf
+          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?theme=light" resume.jpg resume.png
+          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?theme=business" resume_dark.jpg resume_dark.png
+          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?theme=wireframe" resume_comic.jpg resume_comic.png
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v4

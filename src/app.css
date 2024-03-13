@@ -62,3 +62,12 @@
 .remove-shadows > * > * > * {
 	box-shadow: none !important;
 }
+.remove-shadows > * > * > * > * {
+	box-shadow: none !important;
+}
+.remove-shadows > * > * > * > * > * {
+	box-shadow: none !important;
+}
+.remove-shadows > * > * > * > * > * > * {
+	box-shadow: none !important;
+}
