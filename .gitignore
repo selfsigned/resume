@@ -13,4 +13,5 @@ vite.config.ts.timestamp-*
 resume*.pdf
 resume*.jpg
 resume*.jpeg
+resume*.webp
 resume*.png

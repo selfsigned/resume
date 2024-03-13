@@ -31,12 +31,18 @@ async function puppeteerGrab(targetPage, destination) {
 
 	// Pick an export format
 	let extension = destination.split('.').pop();
-	if (extension === 'jpg' || extension === 'jpeg' || extension === 'png') {
+	if (
+		extension === 'jpg' ||
+		extension === 'jpeg' ||
+		(extension === 'webp') | (extension === 'png')
+	) {
 		await page.setViewport({ width: 595, height: 842, deviceScaleFactor: 3 });
 
-		if (extension === 'png')
+		if (extension === 'png') {
 			await page.screenshot({ path: destination, type: 'png', fullPage: true });
-		else await page.screenshot({ path: destination, type: 'jpeg', quality: 80, fullPage: true });
+		} else if (extension === 'webp') {
+			await page.screenshot({ path: destination, type: 'webp', quality: 70, fullPage: true });
+		} else await page.screenshot({ path: destination, type: 'jpeg', quality: 80, fullPage: true });
 	} else {
 		await page.pdf({
 			path: destination,

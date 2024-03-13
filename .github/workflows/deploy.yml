@@ -45,15 +45,16 @@ jobs:
           node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?print=1&theme=light" resume.pdf
           node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?print=1&theme=business" resume_dark.pdf
           node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?print=1&theme=wireframe" resume_comic.pdf
-          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?theme=light" resume.jpg resume.png
-          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?theme=business" resume_dark.jpg resume_dark.png
-          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?theme=wireframe" resume_comic.jpg resume_comic.png
+          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?theme=light" resume.jpg resume.png resume.webp
+          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?theme=business" resume_dark.jpg resume_dark.png resume_dark.webp
+          node generateResume.js "http://localhost:${{ env.APP_PORT }}/resume?theme=wireframe" resume_comic.jpg resume_comic.png resume_comic.webp
 
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:
           path: |
             resume*.pdf
+            resume*.webp
             resume*.jpg
             resume*.png
 
@@ -68,6 +69,7 @@ jobs:
           tag_name: latest
           files: |
             resume*.pdf
+            resume*.webp
             resume*.jpg
             resume*.png
 
