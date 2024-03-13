@@ -1,4 +1,4 @@
-name: Build and release resume
+name: Build, release and deploy resume
 
 on:
   push:
@@ -70,3 +70,30 @@ jobs:
             resume*.pdf
             resume*.jpg
             resume*.png
+
+      - name: Create svelte build
+        run: |
+          cp resume* static/
+          npm run build
+
+      - name: Upload Page Artifacts
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: 'build/'
+
+  deploy_site:
+    runs-on: ubuntu-latest
+    needs: build_pdf
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy Github Site
+        id: deployment
+        uses: actions/deploy-pages@v2
