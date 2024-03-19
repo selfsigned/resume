@@ -52,22 +52,6 @@
 	}
 }
 
-/* Ugly and slow hack */
-.remove-shadows > * {
-	box-shadow: none !important;
-}
-.remove-shadows > * > * {
-	box-shadow: none !important;
-}
-.remove-shadows > * > * > * {
-	box-shadow: none !important;
-}
-.remove-shadows > * > * > * > * {
-	box-shadow: none !important;
-}
-.remove-shadows > * > * > * > * > * {
-	box-shadow: none !important;
-}
-.remove-shadows > * > * > * > * > * > * {
+.remove-shadows * {
 	box-shadow: none !important;
 }
