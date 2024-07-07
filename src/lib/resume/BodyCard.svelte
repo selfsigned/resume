@@ -4,9 +4,9 @@
 
 <div class="card card-bordered w-full p-2 shadow-sm">
 	{#if title}
-		<h2 class="mb-3 ml-4 font-vcr text-2xl tracking-wide">{title}</h2>
+		<h2 class="mb-2 ml-2 font-vcr text-2xl tracking-wide">{title}</h2>
 	{/if}
-	<div class="ml-4">
+	<div class="ml-2">
 		<slot />
 	</div>
 </div>

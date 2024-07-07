@@ -5,6 +5,7 @@
 	import SidebarProgress from './SidebarProgress.svelte';
 	import SidebarSkill from './SidebarSkill.svelte';
 	import SidebarLink from './SidebarLink.svelte';
+	import SidebarCertification from './SidebarCertification.svelte';
 
 	// assets
 	import avatarURL from './avatar.webp';
@@ -15,7 +16,7 @@
 	import IconGithub from '~icons/mdi/github-box';
 
 	export let name: string = 'XAVIER PERRIN';
-	export let title: string = 'WEB Developer / Cloud Engineer';
+	export let title: string = 'WEB / Cloud Developer';
 
 	// socials
 	export let website: string | undefined = 'selfsigned.dev';
@@ -33,9 +34,9 @@
 	{...$$restProps}
 >
 	<!-- Sidebar -->
-	<div class="card card-bordered mx-2 mb-1 mt-2 flex w-5/12 items-center shadow-xl">
+	<div class="card card-bordered mx-2 mb-2 mt-2 flex w-5/12 items-center shadow-xl">
 		<!-- Avatar -->
-		<div class="avatar mb-6 mt-2">
+		<div class="avatar mb-2 mt-2">
 			<div class="w-[6rem] rounded-3xl border border-base-300 shadow-xl">
 				<img src={avatarURL} alt="profile" />
 			</div>
@@ -74,17 +75,41 @@
 			{/if}
 		</SidebarSection>
 
+		<SidebarSection title="CERTIFICATIONS">
+			<SidebarCertification
+				link="https://www.credly.com/badges/0887a59a-bb5c-4872-a99e-534eaff3ebde/public_url"
+				title="AWS Certified Developer"
+				level="Associate"
+				date="12.2023"
+			/>
+			<SidebarCertification
+				link="https://www.credly.com/badges/3017ddeb-6eea-4efd-a67e-18cc3e8feae7/public_url"
+				title="AWS Solutions Architect"
+				level="Associate"
+				date="11.2023"
+			/>
+		</SidebarSection>
+
 		<SidebarSection title="SKILLS">
 			<SidebarSkill
 				title="Programming Languages"
-				tags={['JavaScript', 'TypeScript', 'Python', 'C']}
+				tags={['JavaScript', 'TypeScript', 'Go', 'Python', 'C', 'Dart']}
 			/>
 			<SidebarSkill
-				title="Web Development"
-				tags={['Svelte', 'SvelteKit', 'HTML', 'Tailwind CSS']}
+				title="Technologies"
+				tags={[
+					'SvelteKit',
+					'SST',
+					'Flutter',
+					'Node.js',
+					'Drizzle',
+					'HTML',
+					'Tailwind CSS',
+					'OpenAI API',
+				]}
 			/>
 			<SidebarSkill
-				title="Devops"
+				title="DevOps"
 				tags={[
 					'AWS',
 					'Docker',
@@ -105,9 +130,7 @@
 			</div>
 		</SidebarSection>
 		<SidebarSection title="INTERESTS">
-			<SidebarSkill
-				tags={['Street Food', 'Post_Punk', 'New-Wave Cinema', 'Art', 'Entrepreneurship', '...']}
-			/>
+			<SidebarSkill tags={['Street Food', 'Post_Punk', 'Entrepreneurship', 'Art', '...']} />
 		</SidebarSection>
 	</div>
 
@@ -119,14 +142,23 @@
 			<div class="divider m-2 mx-[38%] h-1" />
 			<h2 class="text-lg">{title}</h2>
 		</div>
-
 		<ResumeBodyCard title="WORK EXPERIENCE">
+			<ExperienceEntry
+				position="AWS Cloud Consultant"
+				company="Devoteam Revolve"
+				date="2023"
+				tags={['AWS', 'Cloud', 'DevOps', 'Serverless', 'Lambda', 'IaC']}
+				achievements={[
+					'Achieved multiple AWS certifications and gained valuable experience in cloud migration and architecture.',
+					'Volunteered to work on internal serverless projects to facilitate the onboarding of new employees.',
+				]}
+			/>
 			<ExperienceEntry
 				position="DevOps Intern"
 				company="Mixdata"
 				date="01-06.2019"
 				tags={['Observability', 'Backend', 'Java', 'ElasticSearch', 'Azure', 'OVH']}
-				achivements={[
+				achievements={[
 					"Enhanced the infrastructure's resiliency while developing new features across front and back-end.",
 					'Designed and implemented a monitoring and metrics solution, delivering crucial business and infrastructure insights.',
 				]}
@@ -134,23 +166,25 @@
 		</ResumeBodyCard>
 		<ResumeBodyCard title="EDUCATION">
 			<ExperienceEntry
-				position="LVMH UX Academy"
-				company="HEC"
-				date="01.2024"
-				tags={['UX', 'Prototyping', 'Project Management', 'Web', 'Bootcamp']}
-				achivements={[
-					'Collaborated with a dynamic team of six to craft an innovative solution to enhance the retail experience of a prestigious brand, informing our approach with guerilla interviews.',
-					'Crafted a prototype, central to showcasing our vision for an enhanced user experience to LVMH management.',
+				position="Computer Science"
+				company="42 Paris"
+				date="2017-2024"
+				tags={['Programming', 'Infrastructure', 'Security', 'Systems']}
+				achievements={[
+					"Pursuing a Bachelor's in IT Development and Master's in IT Architecture.",
+					'Developed strong self-learning abilities, mastering new technologies and programming languages through projects and collaboration.',
+					'Completed 20+ collaborative projects, enhancing skills in software development, system administration, and computer security.',
+					'Mentored new students at the start of their curriculum.',
 				]}
 			/>
 			<ExperienceEntry
-				position="Computer Science"
-				company="42 Paris"
-				date="2017-2023"
-				tags={['Programming', 'Infrastructure', 'Security', 'Embedded']}
-				achivements={[
-					'IT Architecture Expert Master-level degree. (Ongoing)',
-					'Developed strong self-teaching abilities by working collaboratively on a broad range of subjects.',
+				position="LVMH UX Academy"
+				company="HEC"
+				date="01.2024"
+				tags={['UX', 'Prototyping', 'Project Management', 'Front-end', 'Bootcamp']}
+				achievements={[
+					'Collaborated with a dynamic team of six to innovate and enhance the retail experience for a prestigious brand, utilizing guerilla interviews to inform our approach.',
+					'Crafted a prototype pivotal in making a startup-style pitch of our vision to LVMH management.',
 				]}
 			/>
 			<ExperienceEntry
@@ -158,15 +192,12 @@
 				company="ESCP"
 				date="09-12.2022"
 				tags={['Design Thinking', 'Art Thinking', 'Startup', 'Leadership']}
-				achivements={[
+				achievements={[
 					"Selectioned to take part in a top business school's Master in Management disruptive entrepreneurship specialization.",
-					'Pitched a project developed within a multi-talented team using art and designing thinking methods, to a jury composed of professors, domain experts and VCs.',
+					'Pitched a project developed within a multi-talented team to a jury composed of professors, domain experts and VCs.',
 				]}
+				padding={2}
 			/>
-		</ResumeBodyCard>
-		<ResumeBodyCard title="CERTIFICATIONS">
-			<ExperienceEntry position="AWS Developer" company="Associate" date="12.2023" />
-			<ExperienceEntry position="AWS Solutions Architect" company="Associate" date="11.2023" />
 		</ResumeBodyCard>
 	</div>
 </div>

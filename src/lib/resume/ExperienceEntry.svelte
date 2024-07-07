@@ -2,11 +2,13 @@
 	export let position: string;
 	export let company: string | undefined = undefined;
 	export let date: string;
-	export let achivements: Array<string> | undefined = undefined;
+	export let achievements: Array<string> | undefined = undefined;
 	export let tags: Array<string> | undefined = undefined;
+
+	export let padding = 4;
 </script>
 
-<div class="mb-2">
+<div class="mb-{padding}">
 	<!-- headline -->
 	<div class="flex w-full justify-between text-lg">
 		<h3 class="font-medium">
@@ -29,9 +31,9 @@
 	<!-- exp lines -->
 
 	<div class="text-md">
-		{#if achivements}
-			{#each achivements as achievement}
-				<div class="mb-1 flex leading-snug">
+		{#if achievements}
+			{#each achievements as achievement}
+				<div class="mb-1 flex text-sm leading-snug">
 					<span class=" mr-1 font-vcr">»</span>
 					<p>{achievement}</p>
 				</div>
