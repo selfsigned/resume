@@ -16,7 +16,7 @@
 	import IconGithub from '~icons/mdi/github-box';
 
 	export let name: string = 'XAVIER PERRIN';
-	export let title: string = 'WEB / Cloud Developer';
+	export let title: string = 'Full Stack Cloud Developer';
 
 	// socials
 	export let website: string | undefined = 'selfsigned.dev';
@@ -93,35 +93,20 @@
 		<SidebarSection title="SKILLS">
 			<SidebarSkill
 				title="Programming Languages"
-				tags={['JavaScript', 'TypeScript', 'Go', 'Python', 'C', 'Dart']}
+				tags={['JavaScript', 'TypeScript', 'Go', 'Python', 'C', 'Dart', 'Bash', 'HTML', 'CSS']}
 			/>
 			<SidebarSkill
-				title="Technologies"
-				tags={[
-					'SvelteKit',
-					'SST',
-					'Flutter',
-					'Node.js',
-					'Drizzle',
-					'HTML',
-					'Tailwind CSS',
-					'OpenAI API',
-				]}
+				title="Frameworks"
+				tags={['SvelteKit', 'Flutter', 'SST', 'Drizzle ORM', 'Tailwind']}
 			/>
 			<SidebarSkill
 				title="DevOps"
-				tags={[
-					'AWS',
-					'Docker',
-					'Terraform',
-					'Ansible',
-					'Github Actions',
-					'Proxmox',
-					'GNU',
-					'Linux',
-				]}
+				tags={['AWS', 'Docker', 'Linux', 'Terraform', 'Ansible', 'GitHub Actions', 'Proxmox']}
 			/>
-			<SidebarSkill title="Tools" tags={['Git', 'GitHub', 'GitLab', 'VIM', 'VS Code']} />
+			<SidebarSkill
+				title="Tooling"
+				tags={['Git', 'VS Code', 'VIM', 'ElasticSearch', 'OpenAI API']}
+			/>
 		</SidebarSection>
 		<SidebarSection title="LANGUAGES" titleClass="-mt-2">
 			<div class="mr-4">
