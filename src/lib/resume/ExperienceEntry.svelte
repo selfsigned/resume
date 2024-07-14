@@ -17,7 +17,7 @@
 				<span class="font-normal">{company}</span>
 			{/if}
 		</h3>
-		<span class="flex font-light">{date}</span>
+		<span class="mt-[3px] flex font-mono text-base opacity-80">{date}</span>
 	</div>
 	<div class="divider mb-2 mt-0 h-0" />
 	<!-- tags -->

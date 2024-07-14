@@ -11,7 +11,7 @@
 <div class="mb-2">
 	<a href={link} class="hover:underline">
 		<h4 class="font-mono font-medium">{title}</h4>
-		<div class="flex w-52 justify-between font-extralight">
+		<div class="flex w-52 justify-between font-mono text-xs opacity-85">
 			{#if level}
 				<div class="flex">
 					<IconLevel class="mr-1 mt-[1px]" />

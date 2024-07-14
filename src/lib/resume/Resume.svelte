@@ -124,8 +124,8 @@
 		<!-- Title -->
 		<div class="card w-full items-center bg-base-300 p-2 shadow-md {forPrint ? '' : 'glass'}">
 			<h1 class="font-vcr text-5xl font-bold tracking-tight">{name}</h1>
-			<div class="divider m-2 mx-[38%] h-1" />
-			<h2 class="text-lg">{title}</h2>
+			<div class="divider m-2 mx-[25%] h-1" />
+			<h2 class="text-mono text-lg">{title}</h2>
 		</div>
 		<ResumeBodyCard title="WORK EXPERIENCE">
 			<ExperienceEntry

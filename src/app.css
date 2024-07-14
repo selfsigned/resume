@@ -27,7 +27,7 @@
 		font-family: 'Space Mono';
 		src: local('Space Mono'), local('SpaceMono'), local('spacemono'), local('space mono'),
 			url('/fonts/SpaceMono-Regular.woff2');
-		font-weight: normal;
+		font-weight: 400 700;
 	}
 
 	@font-face {
